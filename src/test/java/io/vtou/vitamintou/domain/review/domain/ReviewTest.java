@@ -42,12 +42,11 @@ class ReviewTest {
         String expectedContent = "테스트";
         int expectedReviewScoreInt = 6;
         // Act & Assert
-        assertThrows(ReviewException.class, () -> Review.builder()
+        assertThrows(ReviewException.class, Review.builder()
             .userId(expectedUserId)
             .supplementsId(expectedSupplementsId)
             .content(expectedContent)
-            .reviewScore(expectedReviewScoreInt)
-            .build());
+            .reviewScore(expectedReviewScoreInt)::build);
     }
 
     @Test

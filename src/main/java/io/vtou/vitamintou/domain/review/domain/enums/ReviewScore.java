@@ -1,5 +1,6 @@
 package io.vtou.vitamintou.domain.review.domain.enums;
 
+import io.vtou.vitamintou.core.exception.enums.ErrorCode;
 import io.vtou.vitamintou.domain.review.domain.exception.ReviewException;
 import java.util.Arrays;
 import lombok.Getter;
@@ -14,6 +15,6 @@ public enum ReviewScore {
 
     public static ReviewScore findByValue(int value) {
         return Arrays.stream(ReviewScore.values()).filter(score -> score.value == value).findAny()
-            .orElseThrow(() -> new ReviewException("ReviewScore Not Matches"));
+            .orElseThrow(() -> new ReviewException(ErrorCode.REVIEW_SCORE_NOT_FOUND));
     }
 }
