@@ -1,8 +1,17 @@
 package io.vtou.vitamintou.domain.review.domain.exception;
 
-public class ReviewException extends RuntimeException {
+import io.vtou.vitamintou.core.exception.CustomException;
+import io.vtou.vitamintou.core.exception.enums.ErrorCode;
 
-    public ReviewException(String message) {
-        super(message);
+
+public class ReviewException extends CustomException {
+
+    public ReviewException(ErrorCode errorCode,
+        String exceptionValue) {
+        super(errorCode, exceptionValue);
+    }
+
+    public ReviewException(ErrorCode errorCode) {
+        super(errorCode);
     }
 }
