@@ -1,5 +1,6 @@
 package io.vtou.vitamintou.core.exception.handler;
 
+import io.vtou.vitamintou.core.exception.CustomException;
 import io.vtou.vitamintou.core.exception.dto.ExceptionResponse;
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,5 +14,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = {Exception.class})
     protected ResponseEntity<ExceptionResponse> handleException(Exception e, HttpServletRequest request) {
         return ExceptionResponse.toResponseEntity(ErrorCode.SERVER_ERROR, e.getMessage());
+    }
+
+    @ExceptionHandler(value = {CustomException.class})
+    protected ResponseEntity<ExceptionResponse> handleCustomException(CustomException e, HttpServletRequest request) {
+        return ExceptionResponse.toResponseEntity(e.getErrorCode(), e.getExceptionValue());
     }
 }
