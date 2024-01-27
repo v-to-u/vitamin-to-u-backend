@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import io.vtou.vitamintou.domain.review.domain.enums.ReviewScore;
-import io.vtou.vitamintou.domain.review.domain.exception.ReviewException;
+import io.vtou.vitamintou.domain.review.exception.ReviewException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
