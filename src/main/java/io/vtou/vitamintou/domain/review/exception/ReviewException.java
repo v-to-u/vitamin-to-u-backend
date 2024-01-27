@@ -1,4 +1,4 @@
-package io.vtou.vitamintou.domain.review.domain.exception;
+package io.vtou.vitamintou.domain.review.exception;
 
 import io.vtou.vitamintou.core.exception.CustomException;
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
