@@ -30,7 +30,7 @@ public class Review {
     private Long id;
 
     @Column(name = "user_id", nullable = false)
-    private String userId;
+    private Long userId;
 
     @Column(name = "supplements_id", nullable = false)
     private Long supplementsId;
@@ -52,7 +52,7 @@ public class Review {
     private LocalDateTime updatedAt;
 
     @Builder
-    private Review(String userId, Long supplementsId, String content, int reviewScore) {
+    private Review(Long userId, Long supplementsId, String content, int reviewScore) {
         this.userId = userId;
         this.supplementsId = supplementsId;
         this.content = content;

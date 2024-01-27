@@ -1,7 +1,7 @@
 package io.vtou.vitamintou.domain.review.domain.enums;
 
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
-import io.vtou.vitamintou.domain.review.domain.exception.ReviewException;
+import io.vtou.vitamintou.domain.review.exception.ReviewException;
 import java.util.Arrays;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

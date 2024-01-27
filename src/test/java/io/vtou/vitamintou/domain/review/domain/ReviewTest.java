@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import io.vtou.vitamintou.domain.review.domain.enums.ReviewScore;
-import io.vtou.vitamintou.domain.review.domain.exception.ReviewException;
+import io.vtou.vitamintou.domain.review.exception.ReviewException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class ReviewTest {
     @Test
     void testCreateReviewSuccess() {
         // Arrange
-        String expectedUserId = "testId";
+        Long expectedUserId = 1L;
         long expectedSupplementsId = 1L;
         String expectedContent = "테스트";
         int expectedReviewScoreInt = 5;
@@ -37,7 +37,7 @@ class ReviewTest {
     @Test
     void testCreateReviewFail() {
         // Arrange
-        String expectedUserId = "testId";
+        Long expectedUserId = 1L;
         long expectedSupplementsId = 1L;
         String expectedContent = "테스트";
         int expectedReviewScoreInt = 6;
@@ -52,7 +52,7 @@ class ReviewTest {
     @Test
     void testUpdateReviewValuesSuccess() {
         // Arrange
-        String expectedUserId = "testId";
+        Long expectedUserId = 1L;
         long expectedSupplementsId = 1L;
         String expectedContent = "테스트";
         int expectedReviewScoreInt = 5;
@@ -78,7 +78,7 @@ class ReviewTest {
     @Test
     void testUpdateReviewValuesFail() {
         // Arrange
-        String expectedUserId = "testId";
+        Long expectedUserId = 1L;
         long expectedSupplementsId = 1L;
         String expectedContent = "테스트";
         int expectedReviewScoreInt = 5;
