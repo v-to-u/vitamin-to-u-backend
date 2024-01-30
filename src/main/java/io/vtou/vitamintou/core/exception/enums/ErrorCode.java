@@ -16,6 +16,8 @@ public enum ErrorCode {
     REVIEW_SCORE_NOT_FOUND(BAD_REQUEST, "정의되지 않은 리뷰 점수입니다."),
     USER_UUID_NOT_BLANK(BAD_REQUEST, "유저 UUID는 공백이 될 수 없습니다."),
     USER_NICKNAME_NOT_BLANK(BAD_REQUEST, "유저 닉네임은 공백이 될 수 없습니다."),
+    REVIEW_LIKE_USER_ID_NOT_BLANK(BAD_REQUEST, "유저 ID는 공백이 될 수 없습니다."),
+    REVIEW_LIKE_REVIEW_ID_NOT_BLANK(BAD_REQUEST, "리뷰 ID는 공백이 될 수 없습니다."),
     ;
     private final HttpStatus httpStatus;
     private final String message;
