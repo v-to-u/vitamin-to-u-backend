@@ -36,14 +36,14 @@ public class Supplements {
 
     // 소비기한 (제조 이후 개월수)
     @Column(name = "expiry_month", nullable = false)
-    private Integer expiryMonth;
+    private String expiryMonth;
 
     // 보관 방법
-    @Column(name = "storage_methods", nullable = false)
+    @Column(name = "storage_methods", nullable = false,length = 1000)
     private String storageMethods;
 
     // 주의 사항
-    @Column(name = "caveats", nullable = false)
+    @Column(name = "caveats", nullable = false,length = 1000)
     private String caveats;
 
     // 성상
@@ -51,20 +51,20 @@ public class Supplements {
     private String appearance;
 
     // 기준 규격
-    @Column(name = "reference_standard", nullable = false)
+    @Column(name = "reference_standard", nullable = false,length = 1000)
     private String referenceStandard;
 
     // 효능
-    @Column(name = "efficacy", nullable = false)
+    @Column(name = "efficacy", nullable = false, length = 1000)
     private String efficacy;
 
     // 제품 형태
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     @Column(name = "supplements_shape", nullable = false)
-    private SupplementsShape supplementsShape;
+    private String supplementsShape;
 
     // 원재료
-    @Column(name = "raw_materials", nullable = false)
+    @Column(name = "raw_materials", nullable = false,length = 1000)
     private String rawMaterials;
 
     // 데이터 생성 일자

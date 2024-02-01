@@ -1,6 +1,7 @@
 package io.vtou.vitamintou.domain.supplements.domain.enums;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
 public enum SupplementsShape {
