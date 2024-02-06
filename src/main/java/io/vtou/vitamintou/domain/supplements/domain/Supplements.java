@@ -1,10 +1,8 @@
 package io.vtou.vitamintou.domain.supplements.domain;
 
-import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsShape;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
 import lombok.AccessLevel;
