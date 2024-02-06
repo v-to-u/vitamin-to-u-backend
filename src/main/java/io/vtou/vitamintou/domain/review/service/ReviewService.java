@@ -32,5 +32,12 @@ public class ReviewService {
         return ReviewResponse.from(review);
     }
 
+    public Long deleteReview(long reviewId, long userId) {
+        Review review = reviewRepository.findByIdAndUserId(reviewId, userId)
+            .orElseThrow(() -> new ReviewException(ErrorCode.REVIEW_NOT_FOUND));
+        reviewRepository.delete(review);
+        return reviewId;
+    }
+
 
 }

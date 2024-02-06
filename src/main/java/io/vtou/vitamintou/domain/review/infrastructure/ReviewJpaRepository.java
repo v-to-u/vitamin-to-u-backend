@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ReviewJpaRepository extends JpaRepository<Review, Long> {
 
     Optional<Review> findByUserIdAndSupplementsId(Long userId, Long supplementsId);
+
+    Optional<Review> findByIdAndUserId(Long id, Long userId);
 }
