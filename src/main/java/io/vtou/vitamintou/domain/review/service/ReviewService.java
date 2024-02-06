@@ -9,6 +9,7 @@ import io.vtou.vitamintou.domain.review.service.dto.req.UpdateReviewRequest;
 import io.vtou.vitamintou.domain.review.service.dto.res.ReviewResponse;
 import io.vtou.vitamintou.domain.supplements.service.SupplementsCommonService;
 import io.vtou.vitamintou.domain.users.service.UserCommonService;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,11 +41,19 @@ public class ReviewService {
         return reviewId;
     }
 
-    public ReviewResponse updateReview(long reviewId, UpdateReviewRequest request){
+    public ReviewResponse updateReview(long reviewId, UpdateReviewRequest request) {
         Review review = reviewRepository.findByIdAndUserId(reviewId, request.getUserId())
             .orElseThrow(() -> new ReviewException(ErrorCode.REVIEW_NOT_FOUND));
         review.updateReviewValues(request.getContent(), request.getReviewScore());
         return ReviewResponse.from(review);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ReviewResponse> getReviewsBySupplementsId(Long supplementsId) {
+        supplementsCommonService.verifySupplementsId(supplementsId);
+        return reviewRepository.findBySupplementsId(supplementsId).stream()
+            .map(ReviewResponse::from)
+            .toList();
     }
 
 
