@@ -18,6 +18,8 @@ public enum ErrorCode {
     USER_NICKNAME_NOT_BLANK(BAD_REQUEST, "유저 닉네임은 공백이 될 수 없습니다."),
     REVIEW_LIKE_USER_ID_NOT_BLANK(BAD_REQUEST, "유저 ID는 공백이 될 수 없습니다."),
     REVIEW_LIKE_REVIEW_ID_NOT_BLANK(BAD_REQUEST, "리뷰 ID는 공백이 될 수 없습니다."),
+//    NO_EFFICIENCY(BAD_REQUEST,"리스트에 없는 효능입니다."),
+//    NO_MATERIALS(BAD_REQUEST,"리스트에 없는 원재료입니다."),
     ;
     private final HttpStatus httpStatus;
     private final String message;
