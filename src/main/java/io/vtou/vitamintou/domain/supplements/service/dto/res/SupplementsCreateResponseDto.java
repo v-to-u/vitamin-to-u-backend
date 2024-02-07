@@ -15,14 +15,16 @@ public class SupplementsCreateResponseDto {
     private final String caveats;
     private final String appearance;
     private final String referenceStandard;
+    private final String efficacy;
     private final String supplementsShape;
+    private final String rawMaterials;
     private final LocalDate createdAt;
     private final LocalDate updatedAt;
 
     private SupplementsCreateResponseDto(Long id, String name, String companyName,
                                          String expiryMonth,
                                          String storageMethods, String caveats, String appearance, String referenceStandard,
-                                         String supplementsShape, LocalDate createdAt,
+                                         String efficacy, String supplementsShape, String rawMaterials, LocalDate createdAt,
                                          LocalDate updatedAt) {
         this.id = id;
         this.name = name;
@@ -32,7 +34,9 @@ public class SupplementsCreateResponseDto {
         this.caveats = caveats;
         this.appearance = appearance;
         this.referenceStandard = referenceStandard;
+        this.efficacy = efficacy;
         this.supplementsShape = supplementsShape;
+        this.rawMaterials = rawMaterials;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -47,7 +51,9 @@ public class SupplementsCreateResponseDto {
                 supplements.getCaveats(),
                 supplements.getAppearance(),
                 supplements.getReferenceStandard(),
+                supplements.getEfficacy(),
                 supplements.getSupplementsShape(),
+                supplements.getRawMaterials(),
                 supplements.getCreatedAt(),
                 supplements.getUpdatedAt()
         );

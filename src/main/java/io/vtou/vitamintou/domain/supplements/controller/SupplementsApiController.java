@@ -40,7 +40,9 @@ public class SupplementsApiController {
                 .caveats(temp.getString("IFTKN_ATNT_MATR_CN"))
                 .appearance(temp.getString("DISPOS"))
                 .referenceStandard(temp.getString("STDR_STND"))
+                .efficacy(temp.getString("PRIMARY_FNCLTY"))
                 .supplementsShape(temp.getString("SHAP"))
+                .rawMaterials(temp.getString("RAWMTRL_NM"))
                 .createdAt(LocalDate.parse(temp.getString("PRMS_DT"), formatter))
                 .updatedAt(LocalDate.parse(temp.getString("LAST_UPDT_DTM"), formatter))
                 .build();

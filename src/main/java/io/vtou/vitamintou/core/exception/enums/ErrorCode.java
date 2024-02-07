@@ -18,8 +18,12 @@ public enum ErrorCode {
     USER_NICKNAME_NOT_BLANK(BAD_REQUEST, "유저 닉네임은 공백이 될 수 없습니다."),
     REVIEW_LIKE_USER_ID_NOT_BLANK(BAD_REQUEST, "유저 ID는 공백이 될 수 없습니다."),
     REVIEW_LIKE_REVIEW_ID_NOT_BLANK(BAD_REQUEST, "리뷰 ID는 공백이 될 수 없습니다."),
-//    NO_EFFICIENCY(BAD_REQUEST,"리스트에 없는 효능입니다."),
-//    NO_MATERIALS(BAD_REQUEST,"리스트에 없는 원재료입니다."),
+    REVIEW_USER_ID_NOT_BLANK(BAD_REQUEST, "유저 ID는 공백이 될 수 없습니다."),
+    REVIEW_ALREADY_EXISTS(BAD_REQUEST, "이미 리뷰가 존재합니다."),
+    // 404
+    SUPPLEMENTS_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 영양제를 찾을 수 없습니다."),
+    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 유저를 찾을 수 없습니다."),
+    REVIEW_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 리뷰를 찾을 수 없습니다.");
     ;
     private final HttpStatus httpStatus;
     private final String message;

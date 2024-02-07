@@ -13,7 +13,7 @@ import lombok.*;
 public class Efficiencys {
     @Id
     @Column(name = "id",nullable = false)
-    private Long id;
+    private String id;
 
     @Column(name="name",nullable = false,unique = true)
     private String name;
