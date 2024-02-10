@@ -2,6 +2,7 @@ package io.vtou.vitamintou.core.exception.enums;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

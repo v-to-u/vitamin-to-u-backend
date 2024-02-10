@@ -1,5 +1,6 @@
 package io.vtou.vitamintou.domain.supplements.controller;
 
+import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsShape;
 import io.vtou.vitamintou.domain.supplements.infrastructure.provider.SupplementsOpenApiProvider;
 import io.vtou.vitamintou.domain.supplements.service.SupplementsService;
 import io.vtou.vitamintou.domain.supplements.service.dto.req.SupplementsCreateRequestDto;
@@ -42,7 +43,7 @@ public class SupplementsApiController {
                 .efficacy(temp.getString("PRIMARY_FNCLTY"))
                 .supplementsShape(temp.getString("SHAP"))
                 .rawMaterials(temp.getString("RAWMTRL_NM"))
-                .createdAt(LocalDate.parse(temp.getString("PRMS-DT"), formatter))
+                .createdAt(LocalDate.parse(temp.getString("PRMS_DT"), formatter))
                 .updatedAt(LocalDate.parse(temp.getString("LAST_UPDT_DTM"), formatter))
                 .build();
 

@@ -1,7 +1,10 @@
 package io.vtou.vitamintou.domain.supplements.service.dto.req;
 
 import io.vtou.vitamintou.domain.supplements.domain.Supplements;
+
 import java.time.LocalDate;
+
+import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsShape;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -24,9 +27,9 @@ public class SupplementsCreateRequestDto {
 
     @Builder
     private SupplementsCreateRequestDto(Long id, String name, String companyName, String expiryMonth,
-        String storageMethods, String caveats, String appearance, String referenceStandard,
-        String efficacy, String supplementsShape, String rawMaterials, LocalDate createdAt,
-        LocalDate updatedAt) {
+                                        String storageMethods, String caveats, String appearance, String referenceStandard,
+                                        String efficacy, String supplementsShape, String rawMaterials, LocalDate createdAt,
+                                        LocalDate updatedAt) {
         this.id = id;
         this.name = name;
         this.companyName = companyName;
@@ -44,19 +47,19 @@ public class SupplementsCreateRequestDto {
 
     public Supplements toEntity() {
         return Supplements.builder()
-            .id(id)
-            .name(name)
-            .companyName(companyName)
-            .expiryMonth(expiryMonth)
-            .storageMethods(storageMethods)
-            .caveats(caveats)
-            .appearance(appearance)
-            .referenceStandard(referenceStandard)
-            .efficacy(efficacy)
-            .supplementsShape(supplementsShape)
-            .rawMaterials(rawMaterials)
-            .createdAt(createdAt)
-            .updatedAt(updatedAt)
-            .build();
+                .id(id)
+                .name(name)
+                .companyName(companyName)
+                .expiryMonth(expiryMonth)
+                .storageMethods(storageMethods)
+                .caveats(caveats)
+                .appearance(appearance)
+                .referenceStandard(referenceStandard)
+                .efficacy(efficacy)
+                .supplementsShape(supplementsShape)
+                .rawMaterials(rawMaterials)
+                .createdAt(createdAt)
+                .updatedAt(updatedAt)
+                .build();
     }
 }
