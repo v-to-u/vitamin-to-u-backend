@@ -15,8 +15,8 @@ public class EfficacyMapping {
     private Long id;
 
     @Column(name = "supplements_id",nullable = false)
-    private String supplements;
+    private Long supplementsId;
 
     @Column(name="efficacys_id",nullable = false)
-    private String efficacys;
+    private String efficacysId;
 }

@@ -15,8 +15,8 @@ public class RawMaterialsMapping {
     private Long id;
 
     @Column(name = "supplements_id")
-    private String supplements;
+    private Long supplementsId;
 
     @Column(name = "rawMaterial_id")
-    private String rawMaterials;
+    private String rawMaterialsId;
 }

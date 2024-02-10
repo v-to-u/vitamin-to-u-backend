@@ -21,14 +21,13 @@ public enum ErrorCode {
     REVIEW_LIKE_REVIEW_ID_NOT_BLANK(BAD_REQUEST, "리뷰 ID는 공백이 될 수 없습니다."),
     REVIEW_USER_ID_NOT_BLANK(BAD_REQUEST, "유저 ID는 공백이 될 수 없습니다."),
     REVIEW_ALREADY_EXISTS(BAD_REQUEST, "이미 리뷰가 존재합니다."),
+    EFFICACYS_EXISTS(BAD_REQUEST,"이미 존재하는 효능입니다."),
+    RAW_MATERIALS_EXISTS(BAD_REQUEST,"이미 존재하는 원재료입니다."),
+    SUPPLEMENTS_EXISTS(BAD_REQUEST,"이미 영양제가 존재합니다."),
     // 404
     SUPPLEMENTS_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 영양제를 찾을 수 없습니다."),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 유저를 찾을 수 없습니다."),
     REVIEW_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 리뷰를 찾을 수 없습니다."),
-
-    //409
-    EFFICACYS_EXISTED(HttpStatus.CONFLICT,"이미 존재하는 효능입니다."),
-    RAW_MATERIALS_EXISTED(HttpStatus.CONFLICT,"이미 존재하는 원재료입니다.");
     ;
     private final HttpStatus httpStatus;
     private final String message;
