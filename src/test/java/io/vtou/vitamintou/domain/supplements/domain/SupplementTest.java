@@ -44,7 +44,7 @@ class SupplementTest {
                 .hasFieldOrPropertyWithValue("caveats",expect_cavests)
                 .hasFieldOrPropertyWithValue("appearance",expect_appearance)
                 .hasFieldOrPropertyWithValue("companyName",expect_company_name)
-                .hasFieldOrPropertyWithValue("efficacys",expect_efficacy)
+                .hasFieldOrPropertyWithValue("efficacy",expect_efficacy)
                 .hasFieldOrPropertyWithValue("expiryMonth",expect_expiry_month)
                 .hasFieldOrPropertyWithValue("name",expect_name)
                 .hasFieldOrPropertyWithValue("rawMaterials",expect_raw_materials)
