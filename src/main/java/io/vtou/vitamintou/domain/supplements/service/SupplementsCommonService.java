@@ -1,6 +1,8 @@
 package io.vtou.vitamintou.domain.supplements.service;
 
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
+import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsEfficiency;
+import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsMaterial;
 import io.vtou.vitamintou.domain.supplements.exception.SupplementsException;
 import io.vtou.vitamintou.domain.supplements.infrastructure.SupplementsJpaRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,5 +20,27 @@ public class SupplementsCommonService {
         if (supplementsId == null || supplementsRepository.findById(supplementsId).isEmpty()) {
             throw new SupplementsException(ErrorCode.SUPPLEMENTS_NOT_FOUND);
         }
+    }
+
+    @Transactional
+    public String[] makeEfficacysList(){
+        String[] efficacys=new String[SupplementsEfficiency.values().length];
+        int count=0;
+        for(SupplementsEfficiency supplementsEfficiency : SupplementsEfficiency.values()){
+            efficacys[count]=supplementsEfficiency.getEfficiency();
+            count++;
+        }
+        return efficacys;
+    }
+
+    @Transactional
+    public String[] makeRawMaterialsList(){
+        String[] rawMaterials=new String[SupplementsMaterial.values().length];
+        int count=0;
+        for(SupplementsMaterial supplementsMaterial : SupplementsMaterial.values()){
+            rawMaterials[count]= supplementsMaterial.getMaterial();
+            count++;
+        }
+        return rawMaterials;
     }
 }
