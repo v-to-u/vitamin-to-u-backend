@@ -1,7 +1,6 @@
 package io.vtou.vitamintou.domain.supplements.domain;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
@@ -9,17 +8,15 @@ import lombok.*;
 @Builder
 @NoArgsConstructor (access = AccessLevel.PROTECTED)
 @AllArgsConstructor (access = AccessLevel.PRIVATE)
-public class EfficiencyMapping {
+public class EfficacyMapping {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "supplements_id")
-    private Supplements supplements;
+    @Column(name = "supplements_id",nullable = false)
+    private Long supplementsId;
 
-    @ManyToOne
-    @JoinColumn(name="efficiencys_id")
-    private Efficiencys efficiencys;
+    @Column(name="efficacys_id",nullable = false)
+    private String efficacysId;
 }

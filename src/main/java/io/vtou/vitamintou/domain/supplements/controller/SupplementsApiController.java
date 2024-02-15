@@ -1,8 +1,7 @@
 package io.vtou.vitamintou.domain.supplements.controller;
 
-import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsShape;
 import io.vtou.vitamintou.domain.supplements.infrastructure.provider.SupplementsOpenApiProvider;
-import io.vtou.vitamintou.domain.supplements.service.SupplementsService;
+import io.vtou.vitamintou.domain.supplements.service.SupplementsApiService;
 import io.vtou.vitamintou.domain.supplements.service.dto.req.SupplementsCreateRequestDto;
 import io.vtou.vitamintou.domain.supplements.service.dto.res.SupplementsCreateResponseDto;
 import java.time.LocalDate;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupplementsApiController {
 
     private final SupplementsOpenApiProvider openApiProvider;
-    private final SupplementsService supplementsService;
+    private final SupplementsApiService supplementsService;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
     @GetMapping("/api/load")
@@ -46,6 +45,7 @@ public class SupplementsApiController {
                 .createdAt(LocalDate.parse(temp.getString("PRMS_DT"), formatter))
                 .updatedAt(LocalDate.parse(temp.getString("LAST_UPDT_DTM"), formatter))
                 .build();
+
 
             response.add(supplementsService.save(requestDto));
         });

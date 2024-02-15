@@ -14,11 +14,9 @@ public class RawMaterialsMapping {
     @Column(name = "id",nullable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "supplements_id")
-    private Supplements supplements;
+    @Column(name = "supplements_id")
+    private Long supplementsId;
 
-    @ManyToOne
-    @JoinColumn(name = "rawMaterial_id")
-    private RawMaterials rawMaterials;
+    @Column(name = "rawMaterial_id")
+    private String rawMaterialsId;
 }

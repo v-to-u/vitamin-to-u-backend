@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Efficiencys {
+public class Efficacys {
     @Id
     @Column(name = "id",nullable = false)
     private String id;

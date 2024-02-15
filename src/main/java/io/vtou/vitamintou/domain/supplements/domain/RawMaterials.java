@@ -10,7 +10,6 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class RawMaterials {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",nullable = false)
     private String id;
 
