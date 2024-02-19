@@ -13,7 +13,7 @@ public class SupplementsOpenApiProvider {
 
     public SupplementsOpenApiProvider(@Value("${supplements.secret-key}") String secretKey) {
         this.webClient = WebClient.builder()
-            .baseUrl("https://openapi.foodsafetykorea.go.kr/api/" + secretKey + "/C003/json/1/2/")
+            .baseUrl("https://openapi.foodsafetykorea.go.kr/api/" + secretKey + "/C003/json/1/20/")
             .build();
     }
 
