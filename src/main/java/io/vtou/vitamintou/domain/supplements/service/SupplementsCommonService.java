@@ -1,10 +1,8 @@
 package io.vtou.vitamintou.domain.supplements.service;
 
-import com.querydsl.core.Tuple;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
-import io.vtou.vitamintou.domain.supplements.domain.Supplements;
 import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsEfficiency;
 import io.vtou.vitamintou.domain.supplements.domain.enums.SupplementsMaterial;
 import io.vtou.vitamintou.domain.supplements.exception.SupplementsException;
@@ -14,12 +12,10 @@ import io.vtou.vitamintou.domain.supplements.service.dto.res.SupplementDataRespo
 import io.vtou.vitamintou.domain.supplements.service.dto.res.SupplementResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.imageio.ImageIO;
-import javax.print.DocFlavor;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
