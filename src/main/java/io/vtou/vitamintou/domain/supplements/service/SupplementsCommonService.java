@@ -80,15 +80,25 @@ public class SupplementsCommonService {
         if(result==null) {
             throw new SupplementsException(ErrorCode.SUPPLEMENTS_NOT_FOUND);
         } else{
+            String[] efficacysList = new String[0];
+            String[] rawMaterialsList= new String[0];
+            if(!result.getEfficacys().isEmpty()){
+                efficacysList = result.getEfficacys().split(",");
+            }
+            if(!result.getRawMaterials().isEmpty()){
+                rawMaterialsList = result.getRawMaterials().split(",");
+            }
             NaverApiResponseDto naverApiResponseDto=shoppingService.search(result.getName());
             if(naverApiResponseDto==null){
                 return new SupplementDataResponseDto(
-                        result,""
+                        result.getName(),result.getMakeDate(),result.getCompanyName()
+                        ,result.getDescription(),efficacysList,rawMaterialsList,""
                 );
             }
             else{
                 return new SupplementDataResponseDto(
-                        result,naverApiResponseDto.getLprice()
+                        result.getName(),result.getMakeDate(),result.getCompanyName()
+                        ,result.getDescription(),efficacysList,rawMaterialsList,naverApiResponseDto.getLprice()
                 );
             }
         }
