@@ -103,6 +103,7 @@ public class SupplementsCommonService {
     @Transactional
     public BufferedImage getImage(String name){
         String link=shoppingService.search(name).getImage();
+        log.info(link);
         try{
             URL url=new URL(link);
 

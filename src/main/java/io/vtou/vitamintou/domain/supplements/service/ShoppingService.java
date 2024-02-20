@@ -2,6 +2,7 @@ package io.vtou.vitamintou.domain.supplements.service;
 
 import io.vtou.vitamintou.core.exception.enums.ErrorCode;
 import io.vtou.vitamintou.domain.supplements.exception.SupplementsException;
+import io.vtou.vitamintou.domain.supplements.infrastructure.provider.NaverApiClientProvider;
 import io.vtou.vitamintou.domain.supplements.service.dto.res.NaverApiResponseDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +24,7 @@ import java.net.URI;
 @RequiredArgsConstructor
 @Transactional
 public class ShoppingService {
-    @Value("${navershopping.client_id}")
-    private String clientId;
-
-    @Value("${navershopping.client_secret}")
-    private String clientSecret;
+    private final NaverApiClientProvider naverApiClientProvider;
 
     public NaverApiResponseDto search(String text) {
         URI uri = UriComponentsBuilder
@@ -43,8 +40,8 @@ public class ShoppingService {
 
         RequestEntity<Void> req = RequestEntity
                 .get(uri)
-                .header("X-Naver-Client-Id", clientId)
-                .header("X-Naver-Client-Secret", clientSecret)
+                .header("X-Naver-Client-Id", naverApiClientProvider.getClientId())
+                .header("X-Naver-Client-Secret", naverApiClientProvider.getClientSecret())
                 .build();
 
         RestTemplate restTemplate = new RestTemplate();
