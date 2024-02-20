@@ -1,8 +1,10 @@
 package io.vtou.vitamintou.domain.supplements.controller;
 
 import io.vtou.vitamintou.domain.supplements.infrastructure.provider.SupplementsOpenApiProvider;
+import io.vtou.vitamintou.domain.supplements.service.ShoppingService;
 import io.vtou.vitamintou.domain.supplements.service.SupplementsApiService;
 import io.vtou.vitamintou.domain.supplements.service.dto.req.SupplementsCreateRequestDto;
+import io.vtou.vitamintou.domain.supplements.service.dto.res.NaverApiResponseDto;
 import io.vtou.vitamintou.domain.supplements.service.dto.res.SupplementsCreateResponseDto;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,19 +12,20 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class SupplementsApiController {
 
     private final SupplementsOpenApiProvider openApiProvider;
     private final SupplementsApiService supplementsService;
+    private final ShoppingService shoppingService;
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
 
-    @GetMapping("/api/load")
+    @GetMapping("/openApi")
     public List<SupplementsCreateResponseDto> addDataFromOpenApi() {
         List<SupplementsCreateResponseDto> response = new java.util.ArrayList<>(List.of());
         var openApiResponse = openApiProvider.requestAllSupplementsDataApi();
@@ -50,6 +53,11 @@ public class SupplementsApiController {
             response.add(supplementsService.save(requestDto));
         });
         return response;
+    }
+
+    @GetMapping("/naverApi")
+    public NaverApiResponseDto addDataFromNaverApi(@RequestParam String query){
+        return shoppingService.search(query);
     }
 
 }

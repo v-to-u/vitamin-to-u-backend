@@ -28,6 +28,7 @@ public enum ErrorCode {
     SUPPLEMENTS_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 영양제를 찾을 수 없습니다."),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 유저를 찾을 수 없습니다."),
     REVIEW_NOT_FOUND(HttpStatus.NOT_FOUND, "해당 리뷰를 찾을 수 없습니다."),
+    IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND,"해당 이미지를 찾을 수 없습니다."),
     ;
     private final HttpStatus httpStatus;
     private final String message;
