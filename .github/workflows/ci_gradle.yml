@@ -34,10 +34,8 @@ jobs:
         env:
           OCCUPY_NAVER_API_CLIENT: ${{secrets.OCCUPY_NAVER_API_CLIENT}}
           OCCUPY_SECRET_DIR: src/main/resources
-          OCCUPY_SECRET_TEST_DIR: src/test/resources
           OCCUPY_SECRET_DIR_FILE_NAME: application-secret.yml
-        run: echo $OCCUPY_NAVER_API_CLIENT | base64 --decode > $OCCUPY_SECRET_DIR/$OCCUPY_SECRET_DIR_FILE_NAME &&
-             echo $OCCUPY_NAVER_API_CLIENT | base64 --decode > $OCCUPY_SECRET_TEST_DIR/$OCCUPY_SECRET_DIR_FILE_NAME
+        run: echo $OCCUPY_NAVER_API_CLIENT | base64 --decode > $OCCUPY_SECRET_DIR/$OCCUPY_SECRET_DIR_FILE_NAME
 
         ## Gradle Wrapper 권한 부여
       - name: Grant execute permission for gradlew
